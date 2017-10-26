@@ -21,11 +21,26 @@ class ViewController: UIViewController {
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundImageView.addSubview(blurEffectView)
+
+        loadAPIData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    //MARK: URL Session
+    ///////////////////
+
+    let session: URLSession = .shared
+
+    func loadAPIData() {
+        let url = URL(string: "https://api.spacexdata.com/v1/launches/upcoming")!
+        let task = session.dataTask(with: url) { (data, response, error) in
+            print("Data received: \(String(describing: data))")
+        }
+        task.resume()
     }
 
 
