@@ -8,6 +8,49 @@
 
 import Foundation
 
+class LaunchData: Codable {
+    var launchDateLocal: String
+    struct Rocket: Codable {
+        var rocketName: String
+        enum CodingKeys: String, CodingKey {
+            case rocketName = "rocket_name"
+        }
+    }
+    var rocket: Rocket
+    struct LaunchSite: Codable {
+        var siteId: String
+        enum CodingKeys: String, CodingKey {
+            case siteId = "site_id"
+        }
+    }
+    var launchSite: LaunchSite
+    struct Links: Codable {
+        var missionPatch: String
+        var redditCampaign: String
+        var redditLaunch: String
+        var redditRecovery: String
+        var redditMedia: String
+        var presskit: String
+        var articleLink: String
+        var videoLink: String
+        enum CodingKeys: String, CodingKey {
+            case missionPatch = "mission_patch"
+            case redditCampaign = "reddit_campaign"
+            case redditLaunch = "reddit_launch"
+            case redditRecovery = "reddit_recovery"
+            case redditMedia = "reddit_media"
+            case presskit
+            case articleLink = "article_link"
+            case videoLink = "video_link"
+        }
+    }
+    var links: Links
+    enum CodingKeys: String, CodingKey {
+        case launchDateLocal = "launch_date_local"
+        case launchSite = "launch_site"
+    }
+}
+
 class LaunchSites {
     let name = [
         "kwajalein_atoll":"Omelek Island, Marshal Islands",
