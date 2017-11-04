@@ -20,11 +20,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spacex-launch" translatesAutoresizingMaskIntoConstraints="NO" id="kMB-Lh-yss">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-5R-hjL">
+                                <rect key="frame" x="106" y="750" width="163" height="29"/>
+                                <segments>
+                                    <segment title="Completed"/>
+                                    <segment title="Upcoming"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gkz-5R-hjL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PM0-9T-ABK"/>
                             <constraint firstItem="kMB-Lh-yss" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qra-Hl-yaQ"/>
                             <constraint firstAttribute="trailing" secondItem="kMB-Lh-yss" secondAttribute="trailing" id="cK2-aw-dgC"/>
+                            <constraint firstItem="gkz-5R-hjL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gZL-Tg-opr"/>
                             <constraint firstItem="kMB-Lh-yss" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="gaX-qi-cE2"/>
                             <constraint firstItem="kMB-Lh-yss" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i94-Wq-4FT"/>
                         </constraints>

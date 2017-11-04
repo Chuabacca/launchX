@@ -38,7 +38,11 @@ class ViewController: UIViewController {
     func loadAPIData() {
         let url = URL(string: "https://api.spacexdata.com/v1/launches/upcoming")!
         let task = session.dataTask(with: url) { (data, response, error) in
-            print("Data received: \(String(describing: data))")
+            guard error == nil else { print("Encountered Error: \(error!)"); return }
+
+            let decoder = JSONDecoder()
+            let launches = try! decoder.decode([Launch].self, from: data!)
+            print(launches)
         }
         task.resume()
     }

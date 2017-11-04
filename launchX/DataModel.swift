@@ -8,31 +8,31 @@
 
 import Foundation
 
-class LaunchData: Codable {
-    var launchDateLocal: String
+struct Launch: Decodable {
+    var launchDateLocal: String?
     struct Rocket: Codable {
-        var rocketName: String
+        var rocketName: String?
         enum CodingKeys: String, CodingKey {
             case rocketName = "rocket_name"
         }
     }
     var rocket: Rocket
     struct LaunchSite: Codable {
-        var siteId: String
+        var siteId: String?
         enum CodingKeys: String, CodingKey {
             case siteId = "site_id"
         }
     }
     var launchSite: LaunchSite
     struct Links: Codable {
-        var missionPatch: String
-        var redditCampaign: String
-        var redditLaunch: String
-        var redditRecovery: String
-        var redditMedia: String
-        var presskit: String
-        var articleLink: String
-        var videoLink: String
+        var missionPatch: String?
+        var redditCampaign: String?
+        var redditLaunch: String?
+        var redditRecovery: String?
+        var redditMedia: String?
+        var presskit: String?
+        var articleLink: String?
+        var videoLink: String?
         enum CodingKeys: String, CodingKey {
             case missionPatch = "mission_patch"
             case redditCampaign = "reddit_campaign"
@@ -45,9 +45,13 @@ class LaunchData: Codable {
         }
     }
     var links: Links
+    var details: String?
     enum CodingKeys: String, CodingKey {
         case launchDateLocal = "launch_date_local"
+        case rocket
         case launchSite = "launch_site"
+        case links
+        case details
     }
 }
 
